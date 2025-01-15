@@ -1,0 +1,702 @@
+:root {
+    --primary-color: #FF2D55;
+    --primary-light: #FF6B88;
+    --secondary-color: #5856D6;
+    --text-color: #1C1C1E;
+    --background-color: #FFFFFF;
+    --gray-light: #F5F7FA;
+    --gray-medium: #8E8E93;
+    --gradient-start: rgba(255, 45, 85, 0.85);
+    --gradient-end: rgba(88, 86, 214, 0.75);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* 导航栏样式 */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+/* 英雄区域样式 */
+.hero {
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    text-align: center;
+    min-height: 35vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加柔和的背景效果 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern.svg') center/cover;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* 英雄区下载卡片样式 */
+.hero-downloads {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.hero .download-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.hero .platform-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.hero .download-button {
+    background: white;
+    color: var(--primary-color);
+}
+
+.hero .download-button.android {
+    background: white;
+    color: #3DDC84;
+}
+
+.hero .download-button.web {
+    background: white;
+    color: var(--secondary-color);
+}
+
+/* QR码区域样式 */
+.qr-section {
+    margin-top: 3rem;
+}
+
+.hero .qr-code {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero .qr-placeholder {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-downloads {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 特性区域样式 */
+.features {
+    padding: 4rem 2rem;
+    background: var(--gray-light);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 快速指南样式 */
+.quick-guide {
+    padding: 4rem 2rem;
+}
+
+.quick-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.guide-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 600;
+}
+
+/* 页脚样式 */
+footer {
+    background: var(--text-color);
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section a {
+    display: block;
+    color: var(--gray-medium);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+} 
+
+/* 下载区域样式优化 */
+.download-section {
+    padding: 4rem 2rem;
+    background: var(--gray-light);
+    position: relative;
+}
+
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: var(--gray-light);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.download-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.download-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.download-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.platform-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-light);
+    border-radius: 16px;
+    color: var(--primary-color);
+}
+
+.platform-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.download-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.download-card p {
+    font-size: 1.1rem;
+    color: var(--gray-medium);
+    margin: 0;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    gap: 0.5rem;
+}
+
+.download-button.ios {
+    background: var(--primary-color);
+    color: white;
+}
+
+.download-button.android {
+    background: #3DDC84;
+    color: white;
+}
+
+.download-button.apk {
+    background: #2196F3;
+    color: white;
+}
+
+.download-button.web {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.download-info {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2.5rem;
+    background: var(--gray-light);
+    border-radius: 16px;
+}
+
+.qr-code {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.qr-code img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+}
+
+.qr-code p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.version-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.version-info p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.version-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.version-info a:hover {
+    text-decoration: underline;
+}
+
+/* QR码占位符样式 */
+.qr-placeholder {
+    width: 140px;
+    height: 140px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.qr-placeholder svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 按钮悬停效果 */
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .download-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .download-options {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .download-card {
+        padding: 1.5rem;
+    }
+
+    .download-info {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .download-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .platform-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .platform-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .qr-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+} 
+
+/* 特性介绍样式 */
+.features-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.feature-details {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.feature-details li {
+    margin: 0.5rem 0;
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+}
+
+/* 指南样式增强 */
+.guide-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.step-details {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.step-details li {
+    margin: 0.5rem 0;
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+}
+
+/* 故障排除部分 */
+.troubleshooting {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.troubleshooting h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.issues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.issue-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.issue-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.issue-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.issue-card li {
+    margin: 0.5rem 0;
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+} 
+
+/* 调整按钮样式 */
+.cta-buttons {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cta-primary {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 添加图标到按钮 */
+.cta-primary::after {
+    content: '→';
+    margin-left: 0.3rem;
+    transition: transform 0.2s ease;
+}
+
+.cta-primary:hover::after {
+    transform: translateX(3px);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .cta-buttons {
+        gap: 0.5rem;
+    }
+
+    .cta-primary, .cta-secondary {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.9rem;
+    }
+} 

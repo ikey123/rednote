@@ -1,0 +1,44 @@
+/
+├── download/
+│   ├── ios.html             # iOS下载指南
+│   ├── android.html         # 安卓下载指南
+│   ├── pc.html             # PC版本说明
+│   └── apk.html            # APK下载教程
+│
+├── account/
+│   ├── create.html         # 账号创建教程
+│   ├── verification.html   # 验证码问题解决
+│   ├── login.html         # 登录指南
+│   └── troubleshooting/
+│       ├── code-issues.html    # 验证码问题
+│       └── common-problems.html # 常见问题
+│
+├── guide/
+│   ├── getting-started.html    # 新手入门
+│   ├── language.html          # 语言设置教程
+│   ├── video-download.html    # 视频下载教程
+│   └── features/
+│       ├── basic.html         # 基础功能
+│       └── advanced.html      # 进阶功能
+│
+├── compare/
+│   ├── vs-tiktok.html        # RedNote vs TikTok
+│   ├── vs-lemon8.html        # RedNote vs Lemon8
+│   └── vs-douyin.html        # RedNote vs 抖音
+│
+├── safety/
+│   ├── privacy.html          # 隐私保护
+│   ├── security.html         # 安全指南
+│   └── terms.html           # 使用条款
+│
+├── about/
+│   ├── company.html          # 公司介绍
+│   ├── ceo.html             # CEO信息
+│   └── news/                # 新闻中心
+│       ├── latest.html
+│       └── stock.html       # 股票信息
+│
+└── blog/                    # 博客文章
+    ├── tutorials/           # 教程类文章
+    ├── updates/            # 更新动态
+    └── tips/               # 使用技巧 
